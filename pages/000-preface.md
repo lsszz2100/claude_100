@@ -1,5 +1,12 @@
 # 000. 들어가며
 
+![Claude 기초부터 고급까지 100 표지](../assets/10-cover-100x130.png)
+
+## 문의와 커뮤니티
+
+- 이메일: leemanrank@gmail.com
+- 인공지능 정보공유 단톡방 참여 문의: https://open.kakao.com/o/s4OEqBai
+
 이 책의 목표는 Claude를 잘 묻는 도구로만 사용하는 수준을 넘어, Claude Code와 함께 실제 프로젝트를 읽고, 수정하고, 테스트하고, 배포하고, 운영하는 능력을 갖추는 것입니다.
 
 2026년 05월 03일 기준으로 Claude 생태계는 웹 대화, 데스크톱 앱, 터미널 기반 Claude Code, IDE 통합, MCP, Skills, Hooks, Subagents, Agent Teams, Agent SDK까지 확장되어 있습니다. 이 책은 그 요소들을 흩어진 기능으로 설명하지 않고 하나의 실전 흐름으로 묶습니다.
