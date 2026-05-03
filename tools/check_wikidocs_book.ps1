@@ -50,6 +50,17 @@ $secretPatterns = @(
   "-----BEGIN (RSA |OPENSSH |EC |DSA )?PRIVATE KEY-----"
 )
 
+$personalDataPatterns = @(
+  "(?<![A-Za-z0-9._%+-])[A-Za-z0-9._%+-]{1,64}@[A-Za-z0-9.-]{1,253}\.[A-Za-z]{2,}(?![A-Za-z0-9._%+-])",
+  "open\.kakao\.com/o/[A-Za-z0-9]+",
+  "01[016789]-?[0-9]{3,4}-?[0-9]{4}"
+)
+
+$binaryPersonalDataPatterns = @(
+  ("lee" + "manrank"),
+  "open\.kakao\.com/o/[A-Za-z0-9]+"
+)
+
 $bannedPatterns = @(
   @{ Pattern = '\*\*'; Label = 'Markdown bold marker' },
   @{ Pattern = '[\uD800-\uDFFF]'; Label = 'emoji marker' },
@@ -87,6 +98,12 @@ foreach ($file in $markdownFiles) {
   foreach ($secretPattern in $secretPatterns) {
     if ($text -match $secretPattern) {
       $errors.Add("Secret-like pattern in ${relativeFile}")
+    }
+  }
+
+  foreach ($personalDataPattern in $personalDataPatterns) {
+    if ($text -match $personalDataPattern) {
+      $errors.Add("Personal-data-like pattern in ${relativeFile}")
     }
   }
 
@@ -189,11 +206,30 @@ foreach ($file in $allFiles) {
   if ($blockedExtensions -contains $file.Extension.ToLowerInvariant()) {
     $errors.Add("Blocked file extension found: $(Get-RelativePath $file.FullName)")
   }
+
+  $bytes = [System.IO.File]::ReadAllBytes($file.FullName)
+  $asciiText = [System.Text.Encoding]::ASCII.GetString($bytes)
+  foreach ($secretPattern in $secretPatterns) {
+    if ($asciiText -match $secretPattern) {
+      $errors.Add("Secret-like pattern in $(Get-RelativePath $file.FullName)")
+    }
+  }
+  foreach ($personalDataPattern in $binaryPersonalDataPatterns) {
+    if ($asciiText -match $personalDataPattern) {
+      $errors.Add("Personal-data-like pattern in $(Get-RelativePath $file.FullName)")
+    }
+  }
+
   if ($file.Extension.ToLowerInvariant() -in @(".md", ".ps1", ".json", ".txt", ".yml", ".yaml")) {
     $text = [System.IO.File]::ReadAllText($file.FullName, [System.Text.Encoding]::UTF8)
     foreach ($secretPattern in $secretPatterns) {
       if ($text -match $secretPattern) {
         $errors.Add("Secret-like pattern in $(Get-RelativePath $file.FullName)")
+      }
+    }
+    foreach ($personalDataPattern in $personalDataPatterns) {
+      if ($text -match $personalDataPattern) {
+        $errors.Add("Personal-data-like pattern in $(Get-RelativePath $file.FullName)")
       }
     }
   }

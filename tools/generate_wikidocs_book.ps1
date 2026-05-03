@@ -1,5 +1,13 @@
-﻿$ErrorActionPreference = "Stop"
+param(
+  [switch]$Force
+)
 
+$ErrorActionPreference = "Stop"
+
+if (-not $Force) {
+  Write-Host "This script rewrites README.md, TOC.md, and pages/. Run with -Force only when intentionally regenerating the scaffold."
+  exit 1
+}
 $bookTitle = "Claude 기초부터 고급까지 100"
 $author = "AI_Innovation_Studio"
 $date = "2026년 05월 03일"
