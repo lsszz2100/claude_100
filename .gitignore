@@ -1,0 +1,44 @@
+# Secrets and local credentials
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+*token*
+*secret*
+*credential*
+
+# Private or generated documents
+*.pdf
+*.doc
+*.docx
+*.hwp
+*.hwpx
+*.xlsx
+*.pptx
+
+# Archives and exports
+*.zip
+*.7z
+*.rar
+*.tar
+*.gz
+
+# Local/editor/system files
+.DS_Store
+Thumbs.db
+desktop.ini
+.vscode/
+.idea/
+
+# Build/cache/temp output
+node_modules/
+dist/
+build/
+coverage/
+.cache/
+tmp/
+temp/
+*.log
