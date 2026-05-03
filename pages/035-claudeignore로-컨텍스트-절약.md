@@ -30,11 +30,11 @@ Claude Code가 읽지 않아야 하는 파일은 두 종류입니다.
     "deny": [
       "Read(./.env)",
       "Read(./.env.*)",
-      "Read(./secrets/**)",
+      "Read(./secrets/)",
       "Read(./config/credentials.json)",
-      "Read(./build/**)",
-      "Read(./dist/**)",
-      "Read(./node_modules/**)"
+      "Read(./build/)",
+      "Read(./dist/)",
+      "Read(./node_modules/)"
     ]
   }
 }
@@ -61,19 +61,19 @@ Claude Code가 읽지 않아야 하는 파일은 두 종류입니다.
 ```text
 .env
 .env.*
-secrets/**
+secrets/
 *.pem
 *.key
 *.p12
 credentials.json
 service-account*.json
-node_modules/**
-dist/**
-build/**
-coverage/**
-.next/**
-.gradle/**
-target/**
+node_modules/
+dist/
+build/
+coverage/
+.next/
+.gradle/
+target/
 *.log
 ```
 

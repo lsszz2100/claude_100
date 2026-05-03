@@ -38,12 +38,12 @@ project-docs/
 이 worktree는 frontend 작업 전용이다.
 
 수정 가능:
-- apps/web/**
+- apps/web/
 
 수정 금지:
-- services/api/**
-- db/**
-- infra/**
+- services/api/
+- db/
+- infra/
 
 작업 후:
 - 변경 파일
@@ -80,12 +80,12 @@ project-docs/         docs/profile-update
 - 프로필 수정 화면 구현
 
 수정 가능:
-- apps/web/src/features/profile/**
+- apps/web/src/features/profile/
 
 수정 금지:
-- services/api/**
-- db/**
-- infra/**
+- services/api/
+- db/
+- infra/
 
 공유 계약:
 - API 응답 타입은 docs/profile-api-contract.md를 따른다.

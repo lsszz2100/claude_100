@@ -100,8 +100,8 @@ Filesystem MCP에 쓰기 권한을 줄 때는 다음 질문에 답할 수 있어
 - C:\Users\me\.ssh
 - C:\Users\me\.aws
 - C:\Users\me\Downloads
-- **/.env
-- **/secrets/**
+- .env
+- secrets/
 ```
 
 ## 체크리스트

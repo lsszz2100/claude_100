@@ -5,7 +5,7 @@
 
 ## 핵심 개념
 
-커밋 전 테스트 Hook은 변경사항이 검증 없이 커밋되는 것을 줄이는 장치입니다. Claude Code Hook만으로 Git pre-commit을 완전히 대체하려고 하기보다, Claude 작업 중 테스트 누락을 감지하고 경고하는 용도로 시작하는 편이 안전합니다.
+커밋 전 테스트 Hook은 변경사항이 검증 없이 커밋되는 것을 줄이는 장치입니다. Claude Code Hook만으로 Git pre-commit을 그대로 대체하려고 하기보다, Claude 작업 중 테스트 누락을 감지하고 경고하는 용도로 시작하는 편이 안전합니다.
 
 ## Claude Code에서의 접근
 
