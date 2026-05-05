@@ -107,6 +107,10 @@ foreach ($file in $markdownFiles) {
     }
   }
 
+  if ($relativeFile -match '(^|[\\/])[0-9]{3}-part\.md$' -and $text -match '(?m)^# Part [1-9]\.') {
+    $errors.Add("Unpadded part number in ${relativeFile}: use Part 01 through Part 09")
+  }
+
   if ($relativeFile -match '^pages\\([0-9]{3})-' -or $relativeFile -match '^pages/([0-9]{3})-') {
     $fileNumber = $Matches[1]
     $firstLine = ($text -split "(`r`n|`n|`r)", 2)[0]
@@ -136,6 +140,9 @@ $tocPath = Join-Path $root.Path "TOC.md"
 if (Test-Path -LiteralPath $tocPath) {
   $tocText = [System.IO.File]::ReadAllText($tocPath, [System.Text.Encoding]::UTF8)
   $tocBody = Remove-MarkdownCodeBlocks $tocText
+  if ($tocText -match '(?m)^- \[Part [1-9]\.') {
+    $errors.Add("TOC has unpadded part number: use Part 01 through Part 09")
+  }
   $tocMatches = [regex]::Matches($tocBody, '\[[^\]]+\]\((pages/[^)]+\.md)\)')
   foreach ($match in $tocMatches) {
     $target = Join-Path $root.Path $match.Groups[1].Value
