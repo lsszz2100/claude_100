@@ -1,5 +1,7 @@
 # 106. 추천 CLAUDE.md 템플릿
 
+저자: AI_Innovation_Studio
+
 `CLAUDE.md`는 Claude Code가 프로젝트를 이해할 때 참고하는 장기 지침입니다. 좋은 `CLAUDE.md`는 길지 않지만, 실행 명령과 금지사항, 검증 기준이 명확합니다.
 
 초보자는 이 파일을 “Claude에게 주는 프로젝트 사용 설명서”라고 생각하면 됩니다. Claude Code가 매번 같은 질문을 다시 하지 않도록, 프로젝트의 목적과 반복되는 규칙을 한곳에 적어 두는 문서입니다.
@@ -10,6 +12,8 @@
 
 ````markdown
 # Project Instructions
+
+저자: AI_Innovation_Studio
 
 ## Project Overview
 

@@ -2,6 +2,7 @@
 
 난이도: 고급  
 기준일: 2026년 05월 03일
+저자: AI_Innovation_Studio
 
 ## 핵심 개념
 
@@ -47,6 +48,20 @@ Filesystem MCP로 현재 프로젝트 docs 폴더만 분석해줘.
 - 삭제/이동 자동화
 - credential 파일 요약
 
+## 경로 정책
+
+Filesystem MCP는 경로 정책이 전부입니다.
+
+| 정책 | 설명 |
+| --- | --- |
+| allowlist | 접근 가능한 루트를 명시한다 |
+| denylist | secret, credential, 홈 설정 경로를 차단한다 |
+| read-only default | 처음에는 읽기 전용으로 시작한다 |
+| write approval | 쓰기 작업은 변경 전/후 표를 승인받는다 |
+| generated files | 생성 파일은 원본 수정 경로를 안내한다 |
+
+Windows에서는 OneDrive, 바탕 화면, 한글 경로처럼 동기화나 권한 문제가 섞일 수 있습니다. 대량 작업 전에는 실제 절대 경로와 대상 파일 수를 먼저 확인하세요.
+
 ## 설정 검토 프롬프트
 
 ```text
@@ -88,6 +103,14 @@ Filesystem MCP에 쓰기 권한을 줄 때는 다음 질문에 답할 수 있어
 - 대량 변경 전에 샘플 3개로 검증했는가?
 - secret 파일과 build artifact를 제외했는가?
 
+## 차단 메시지 예시
+
+```text
+이 경로는 Filesystem MCP 허용 범위 밖입니다.
+허용된 루트: docs/, src/, tests/
+필요하다면 사용자가 명시적으로 범위를 승인해야 합니다.
+```
+
 ## 안전한 allowlist 예시
 
 ```text
@@ -111,6 +134,8 @@ Filesystem MCP에 쓰기 권한을 줄 때는 다음 질문에 답할 수 있어
 - [ ] secret 파일과 credential 경로를 차단한다.
 - [ ] 쓰기 권한은 필요할 때만 허용한다.
 - [ ] 대량 파일 작업은 dry run으로 시작한다.
+- [ ] 절대 경로와 대상 파일 수를 실행 전에 확인한다.
+- [ ] generated file은 직접 수정하지 않도록 안내한다.
 
 ## 다음 단계
 

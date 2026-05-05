@@ -1,5 +1,8 @@
 # 목차
 
+
+저자: AI_Innovation_Studio
+
 - [000. 들어가며](pages/000-preface.md)
 - [Part 01. Claude 입문](pages/001-part.md)
   - [001. Claude란 무엇인가](pages/001-claude란-무엇인가.md)

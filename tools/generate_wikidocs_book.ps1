@@ -191,6 +191,8 @@ Write-Utf8NoBom "README.md" $readme
 $tocLines = New-Object System.Collections.Generic.List[string]
 $tocLines.Add("# 목차")
 $tocLines.Add("")
+$tocLines.Add("저자: $author")
+$tocLines.Add("")
 $tocLines.Add("- [000. 들어가며](pages/000-preface.md)")
 
 $currentPart = ""
@@ -217,6 +219,8 @@ Write-Utf8NoBom "TOC.md" ($tocLines -join "`r`n")
 
 $preface = @"
 # 000. 들어가며
+
+저자: $author
 
 이 책의 목표는 Claude를 잘 묻는 도구로만 사용하는 수준을 넘어, Claude Code와 함께 실제 프로젝트를 읽고, 수정하고, 테스트하고, 배포하고, 운영하는 능력을 갖추는 것입니다.
 
@@ -246,8 +250,10 @@ foreach ($partName in $partNames) {
   $first = $partGroup[0]
   $partFile = "pages/{0:000}-part.md" -f $first.N
   $items = ($partGroup | ForEach-Object { "- {0:000}. {1}: {2}" -f $_.N, $_.Title, $_.Focus }) -join "`r`n"
-  $content = @"
+$content = @"
 # $partName
+
+저자: $author
 
 이 장은 $($first.Level) 단계 독자를 위한 흐름입니다. 각 페이지는 하나의 주제를 다루며, 개념 설명과 실습 프롬프트를 함께 제공합니다.
 
@@ -270,6 +276,7 @@ foreach ($t in $topics) {
 
 난이도: $($t.Level)  
 기준일: $date
+저자: $author
 
 ## 핵심 개념
 
@@ -325,14 +332,18 @@ $($t.Practice)
 $appendixIntro = @"
 # 부록
 
+저자: $author
+
 부록은 본문 100선을 실제 프로젝트와 팀 운영에 적용할 때 필요한 템플릿, 체크리스트, 출판 가이드를 모았습니다.
 "@
 Write-Utf8NoBom "pages/101-appendix.md" $appendixIntro
 
 foreach ($a in $appendices) {
   $file = "pages/{0:000}-{1}.md" -f $a.N, (New-Slug $a.Title)
-  $content = @"
+$content = @"
 # $("{0:000}" -f $a.N). $($a.Title)
+
+저자: $author
 
 ## 목적
 
@@ -371,6 +382,8 @@ $($a.Focus)
 $imgLines = New-Object System.Collections.Generic.List[string]
 $imgLines.Add("# 900. 이미지 생성 계획")
 $imgLines.Add("")
+$imgLines.Add("저자: $author")
+$imgLines.Add("")
 $imgLines.Add('이 페이지는 GPT image 2.0으로 생성할 학습용 이미지 목록입니다. 생성된 이미지는 `assets/` 폴더에 저장하고 각 장의 본문에서 상대 경로로 참조합니다.')
 $imgLines.Add("")
 foreach ($img in $imagePrompts) {
@@ -388,6 +401,8 @@ Write-Utf8NoBom "pages/900-image-generation-plan.md" ($imgLines -join "`r`n")
 
 $closing = @"
 # 999. 마무리
+
+저자: $author
 
 Claude와 Claude Code를 배우는 목적은 더 많은 명령어를 외우는 것이 아닙니다. 목적은 더 명확하게 생각하고, 더 작은 단위로 실행하고, 더 엄격하게 검증하며, 반복 가능한 업무 시스템을 만드는 것입니다.
 

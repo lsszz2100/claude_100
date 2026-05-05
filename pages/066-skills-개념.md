@@ -2,6 +2,7 @@
 
 난이도: 고급  
 기준일: 2026년 05월 03일
+저자: AI_Innovation_Studio
 
 ![Skills, Hooks, MCP, Agents 확장 구조](../assets/05-skills-hooks-mcp-agents.png)
 

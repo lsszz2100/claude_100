@@ -2,6 +2,7 @@
 
 난이도: 중급  
 기준일: 2026년 05월 03일
+저자: AI_Innovation_Studio
 
 ![CLAUDE.md 메모리](../assets/04-memory-structure.png)
 

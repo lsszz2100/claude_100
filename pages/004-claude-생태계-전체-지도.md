@@ -2,6 +2,7 @@
 
 난이도: 초급  
 기준일: 2026년 05월 03일
+저자: AI_Innovation_Studio
 
 ![Claude 생태계](../assets/02-claude-ecosystem.png)
 

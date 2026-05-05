@@ -1,5 +1,7 @@
 # 108. 추천 Skill 템플릿
 
+저자: AI_Innovation_Studio
+
 Skill은 반복 가능한 작업 절차를 패키징하는 단위입니다. 좋은 Skill은 언제 써야 하는지, 어떤 자료를 읽어야 하는지, 어떤 형식으로 결과를 내야 하는지를 짧게 정의합니다.
 
 Skill을 처음 만들 때는 “자주 반복하지만 매번 설명하기 귀찮은 작업”을 고르세요. 예를 들어 PR 리뷰 형식, 릴리스 노트 작성, 문서 점검, 테스트 실패 분석처럼 입력과 출력이 비교적 일정한 작업이 좋습니다.
@@ -15,6 +17,8 @@ description: Use when ...
 ---
 
 # Skill Name
+
+저자: AI_Innovation_Studio
 
 ## When To Use
 

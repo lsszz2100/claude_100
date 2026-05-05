@@ -1,5 +1,7 @@
 # 103. Windows PowerShell 주의사항
 
+저자: AI_Innovation_Studio
+
 Windows에서 Claude Code를 사용할 때는 PowerShell 문법을 기준으로 생각해야 합니다. 인터넷 예제는 macOS/Linux shell 기준인 경우가 많으므로, 명령 치환, 경로, 환경 변수, 삭제 명령을 그대로 복사하면 실패하거나 위험할 수 있습니다.
 
 ## 자주 다른 문법
@@ -35,6 +37,21 @@ Set-Location "C:\Users\me\OneDrive\바탕 화면\project"
 
 삭제나 이동 명령은 변환만 맞다고 안전한 것이 아닙니다. 실행 전에 절대 경로와 대상 개수를 확인하세요.
 
+## 안전한 확인 패턴
+
+파일을 바꾸기 전에 먼저 조회 명령으로 범위를 확인하세요.
+
+```powershell
+Get-ChildItem -LiteralPath ".\dist"
+Resolve-Path ".\dist"
+```
+
+여러 파일을 다룰 때는 `-WhatIf`를 지원하는 명령인지 확인합니다.
+
+```powershell
+Remove-Item -LiteralPath ".\dist" -Recurse -WhatIf
+```
+
 ## 삭제와 이동
 
 삭제 명령은 가장 조심해야 합니다. Claude Code에게 파일 삭제를 맡길 때도 먼저 대상 경로를 확인하게 하세요.
@@ -59,3 +76,4 @@ Windows PowerShell에서 안전하게 실행할 수 있는 형태로 바꿔줘.
 - [ ] Bash 전용 문법을 PowerShell 문법으로 바꿨다.
 - [ ] 삭제 명령은 실행 전 대상 경로를 확인했다.
 - [ ] 명령 예시가 현재 프로젝트 루트 기준인지 확인했다.
+- [ ] 대량 변경은 가능한 경우 `-WhatIf`나 dry run으로 먼저 확인했다.

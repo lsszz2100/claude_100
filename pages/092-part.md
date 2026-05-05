@@ -1,5 +1,7 @@
 # Part 10. Subagents와 Agent Teams
 
+저자: AI_Innovation_Studio
+
 이 장은 고급 단계 독자를 위한 흐름입니다. 각 페이지는 하나의 주제를 다루며, 개념 설명과 실습 프롬프트를 함께 제공합니다.
 
 ## 처음 읽는 분께
