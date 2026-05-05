@@ -72,6 +72,31 @@ deploy-skill/
 - 회사별 템플릿
 - 드문 edge case
 
+## 파일을 나누는 기준
+
+supporting file을 많이 만든다고 좋은 Skill이 되는 것은 아닙니다. 나누는 기준은 “항상 필요한가”와 “상황별로 달라지는가”입니다.
+
+| 내용 | 위치 |
+| --- | --- |
+| 항상 필요한 절차 | `SKILL.md` |
+| 출력 형식 | `SKILL.md` 또는 `templates/` |
+| 특정 프레임워크 지침 | `references/` |
+| 긴 예시 | `references/` |
+| 실행 가능한 반복 검사 | `scripts/` |
+| 문서 골격 | `templates/` |
+
+`SKILL.md`에는 파일 목록을 늘어놓기보다 언제 어떤 파일을 읽어야 하는지 조건을 적으세요.
+
+## 검증 방법
+
+Skill을 만든 뒤에는 세 가지 요청으로 테스트합니다.
+
+1. Skill이 꼭 필요한 요청
+2. Skill이 필요 없는 비슷한 요청
+3. reference를 읽어야 하는 특수 요청
+
+이 세 요청에서 Skill이 과하게 호출되거나 필요한 reference를 읽지 못하면 `description`과 파일 선택 기준을 고쳐야 합니다.
+
 ## 체크리스트
 
 - [ ] `SKILL.md`는 핵심 절차만 담는다.
@@ -79,6 +104,8 @@ deploy-skill/
 - [ ] reference 파일을 언제 읽을지 명확히 적는다.
 - [ ] 같은 내용을 본문과 reference에 중복하지 않는다.
 - [ ] Skill이 너무 넓으면 여러 Skill로 나눈다.
+- [ ] Skill이 필요 없는 요청에서 과하게 호출되지 않는다.
+- [ ] supporting file을 읽는 조건을 테스트했다.
 
 ## 다음 단계
 
