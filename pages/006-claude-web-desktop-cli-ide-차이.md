@@ -80,4 +80,4 @@ VS Code, Cursor, JetBrains IDE에서 Claude Code를 더 편하게 사용할 수 
 
 ## 다음 단계
 
-다음 장에서는 2026년 05월 03일 기준 공식 Claude Code 설치법을 정리합니다.
+다음 장에서는 2026년 05월 06일 기준 공식 Claude Code 설치법을 정리합니다.

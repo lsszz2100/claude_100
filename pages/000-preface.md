@@ -1,6 +1,8 @@
 # 000. 들어가며
 
 저자: AI_Innovation_Studio
+인공지능 정보공유 텔레그램: t.me/aiinnovationstudio
+서적 GitHub: https://github.com/lsszz2100/Claude_100
 
 ![Claude 기초부터 고급까지 100 표지](../assets/10-cover-100x130.png)
 

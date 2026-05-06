@@ -18,7 +18,7 @@
 - 004. Claude 생태계 전체 지도: Claude Web, Desktop, Code, API, MCP, Skills, Agent SDK가 어떤 관계인지 파악한다.
 - 005. Claude Code란 무엇인가: Claude Code가 터미널에서 코드베이스를 읽고 수정하고 명령을 실행하는 방식으로 동작함을 이해한다.
 - 006. Claude Web, Desktop, CLI, IDE 차이: 작업 환경별 강점과 한계를 구분한다.
-- 007. 2026년 기준 Claude Code 설치법: 2026년 05월 03일 기준 공식 설치 흐름과 deprecated 설치법을 구분한다.
+- 007. 2026년 기준 Claude Code 설치법: 2026년 05월 06일 기준 공식 설치 흐름과 운영체제별 설치 방식을 구분한다.
 - 008. Windows에서 Claude Code 시작하기: PowerShell, CMD, Git for Windows, WSL의 차이를 알고 Windows에서 안전하게 시작한다.
 - 009. 첫 Claude Code 세션 열기: 프로젝트 폴더에서 claude를 실행하고 첫 질문을 던지는 흐름을 익힌다.
 - 010. 프로젝트 폴더 이해시키기: Claude가 파일 구조, README, 설정 파일, 테스트 파일을 읽으며 프로젝트 모델을 세우는 과정을 이해한다.

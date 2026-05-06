@@ -1,6 +1,8 @@
 # 999. 마무리
 
 저자: AI_Innovation_Studio
+인공지능 정보공유 텔레그램: t.me/aiinnovationstudio
+서적 GitHub: https://github.com/lsszz2100/Claude_100
 
 Claude와 Claude Code를 배우는 목적은 더 많은 명령어를 외우는 것이 아닙니다. 목적은 더 명확하게 생각하고, 더 작은 단위로 실행하고, 더 엄격하게 검증하며, 반복 가능한 업무 시스템을 만드는 것입니다.
 
